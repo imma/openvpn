@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+function main {
+  if [[ -x "$(type -P xxxxxx)" ]]; then
+    return 1
+  else
+    return 0
+  fi
+}
+
+source sub "$0" "$@"
