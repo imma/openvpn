@@ -1,6 +1,1 @@
-Setup
-=====
-
-For bash, source `script/profile` to expose the `openvpn` commands.  Requires the
-`defn/app` project installed and sourced.
-
+Visit http://defn.sh/openvpn/ or open `docs/index.html`
