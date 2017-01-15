@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-function bootstrap {
+function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
   pkg ensure net/openvpn
 }
 
-bootstrap
+main "$@"
