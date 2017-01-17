@@ -15,6 +15,11 @@ function main {
       sudo sysctl -w net.ipv4.ip_forward=1
       exec sudo $(which openvpn) server.conf
       ;;
+    client)
+      cd "$shome/example"
+      chmod 600 static.key
+      exec sudo $(which openvpn) client.conf
+      ;;
     *)
       echo "ERROR: unknown server command: ${1:-/not-supplied/}" 1>&2
       return 1
