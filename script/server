@@ -12,6 +12,7 @@ function main {
     default)
       cd "$shome/example"
       chmod 600 static.key
+      sudo sysctl -w net.ipv4.ip_forward=1
       exec sudo $(which openvpn) server.conf
       ;;
     *)
