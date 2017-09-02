@@ -1,0 +1,18 @@
+export OPENSSL="openssl"
+export PKCS11TOOL="pkcs11-tool"
+export GREP="grep"
+export KEY_CONFIG=`whichopensslcnf $EASY_RSA`
+
+export PKCS11_MODULE_PATH="dummy"
+export PKCS11_PIN="dummy"
+export CA_EXPIRE=3650
+
+export KEY_SIZE=2048
+export KEY_EXPIRE=3650
+
+export KEY_COUNTRY="US"
+export KEY_PROVINCE="CA"
+export KEY_CITY="YourCity"
+export KEY_ORG="YourOrg"
+export KEY_EMAIL="your@email"
+export KEY_OU="YourOrgUnit"
