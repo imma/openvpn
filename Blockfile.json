@@ -1,5 +1,6 @@
 {
   "require": [
     "easy-rsa"
-  ]
+  ],
+  "versions": {}
 }
