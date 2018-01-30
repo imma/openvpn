@@ -1,2 +1,4 @@
 sudo route del -net 0.0.0.0         gw 172.17.0.1
 sudo route add -net 192.168.65.0/24 gw 172.17.0.1
+
+https://stackoverflow.com/questions/26342569/bash-script-for-automated-openvpn-logon
