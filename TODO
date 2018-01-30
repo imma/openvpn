@@ -2,3 +2,21 @@ sudo route del -net 0.0.0.0         gw 172.17.0.1
 sudo route add -net 192.168.65.0/24 gw 172.17.0.1
 
 https://stackoverflow.com/questions/26342569/bash-script-for-automated-openvpn-logon
+
+#!/usr/bin/env bash
+
+exec 3<>/dev/tcp/127.0.0.1/3030
+
+username="$1"; shift
+
+set -x
+
+while read -r -u 3; do
+  a="$REPLY"
+  case "$a" in
+    ">PASSWORD:Need"*username/password*)
+      echo 'username "Auth" '"$username" >&3
+      echo 'password "Auth" '"$(gpg2 -q -d vpn-login.gpg)" >&3
+      ;;
+  esac
+done
