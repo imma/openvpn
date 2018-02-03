@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+function version {
+  local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
+  source "$shome/script/profile"
+
+  local ver_openvpn="$(openvpn --version 2>/dev/null | head -1 | awk '{print $2}' || true)"
+  local ver_dnsmasq="$(dnsmasq --version 2>/dev/null | head -1 | awk '{print $3}' || true)"
+  jq -n \
+    --arg openvpn "$ver_openvpn" \
+    --arg dnsmasq "$ver_dnsmasq" \
+      '{openvpn: $openvpn, dnsmasq: $dnsmasq}'
+}
+
+version "$@"
